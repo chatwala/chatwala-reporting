@@ -7,31 +7,45 @@
 <!-- Init ejs vars -->
 <%
 	var totalUsers = 0;
+	var prevKey = '-1';
+	var sub = 0;
+	for(var k in inboxCountData){
+		totalUsers += inboxCountData[k].length;
+	}
 %>
 <body style='background:white'>
 	<table id='mytable'>
 		<thead>
 			<tr>
-				<th># of messages</th>
+				<th># of messages (X)</th>
 				<th># of users</th>
+				<th># of uers with X or more messages</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
 				<td>0</td>
 				<td><%= totalUsersWithoutInbox %></td>
+				<td>-</td>
 			</tr>
 			<!-- loop through for each count of messages in inbox -->
-			<% for(var key in inboxCountData){ %>
+			<% for(var key in inboxCountData){ 
+				if(prevKey == '-1'){
+					sub = 0;
+				}
+				else{
+					sub += inboxCountData[prevKey].length;
+				}
+			%>
 				<tr>
 					<td><%=key%></td>
 					<td><%=inboxCountData[key].length%></td>
+					<td><%= (totalUsers - sub) %> (<%= (((totalUsers - sub)/totalUsers)*100).toFixed(2) %>%)</td>
 				</tr>
 
 			<%
-				totalUsers += inboxCountData[key].length
-
-			}
+					prevKey = key;
+				}
 				totalUsers = totalUsers + totalUsersWithoutInbox;
 			%>
 			<tr>
