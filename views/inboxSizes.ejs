@@ -6,7 +6,7 @@
 </head>
 <!-- Init ejs vars -->
 <%
-	var totalMessages = 0;
+	var totalUsers = 0;
 %>
 <body style='background:white'>
 	<table id='mytable'>
@@ -17,6 +17,10 @@
 			</tr>
 		</thead>
 		<tbody>
+			<tr>
+				<td>0</td>
+				<td><%= totalUsersWithoutInbox %></td>
+			</tr>
 			<!-- loop through for each count of messages in inbox -->
 			<% for(var key in inboxCountData){ %>
 				<tr>
@@ -25,9 +29,15 @@
 				</tr>
 
 			<%
-				totalMessages += inboxCountData[key].length
+				totalUsers += inboxCountData[key].length
 
-			}%>
+			}
+				totalUsers = totalUsers + totalUsersWithoutInbox;
+			%>
+			<tr>
+				<td>Total</td>
+				<td><%= totalUsers%></td>
+			</tr>
 		</tbody>
 	</table>
 </body>

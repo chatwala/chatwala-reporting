@@ -1,5 +1,5 @@
 function config() {
-    var environment = 'deveast'//(process.env.NODE_ENV ? process.env.NODE_ENV : 'rahul');
+    var environment = (process.env.NODE_ENV ? process.env.NODE_ENV : 'rahul');
     var config_file = './configs/' + environment + '.js';
     var config_data;
     try {
