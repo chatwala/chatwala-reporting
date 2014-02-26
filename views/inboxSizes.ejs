@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+	<title>Chatwala-Reporting Inbox Size</title>
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>
+<!-- Init ejs vars -->
+<%
+	var totalMessages = 0;
+%>
+<body style='background:white'>
+	<table id='mytable'>
+		<thead>
+			<tr>
+				<th># of messages</th>
+				<th># of users</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- loop through for each count of messages in inbox -->
+			<% for(var key in inboxCountData){ %>
+				<tr>
+					<td><%=key%></td>
+					<td><%=inboxCountData[key].length%></td>
+				</tr>
+
+			<%
+				totalMessages += inboxCountData[key].length
+
+			}%>
+		</tbody>
+	</table>
+</body>
+</html>
