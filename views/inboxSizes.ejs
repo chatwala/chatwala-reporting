@@ -14,7 +14,8 @@
 	}
 %>
 <body style='background:white'>
-	<table id='mytable'>
+<div>
+	<table id='inboxtable' >
 		<thead>
 			<tr>
 				<th># of messages (X)</th>
@@ -54,5 +55,72 @@
 			</tr>
 		</tbody>
 	</table>
+</div>
+
+<div>
+    <table id="outboxtable">
+        <thead>
+        <tr>
+            <th># of messages (X)</th>
+            <th># of users</th>
+            <th># of uers with X or more outbound messages</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>0</td>
+            <td><%= totalUsersWithoutInbox %></td>
+            <td>-</td>
+        </tr>
+        <!-- loop through for each count of messages in inbox -->
+        <%
+        var totalUsers = 0;
+        var prevKey = '-1';
+        var sub = 0;
+        for(var k in outboxCountData){
+            totalUsers += outboxCountData[k].length;
+        }
+
+
+        for(var key in outboxCountData){
+            if(prevKey == '-1'){
+                sub = 0;
+            }
+            else{
+                sub += outboxCountData[prevKey].length;
+            }
+        %>
+        <tr>
+            <td><%=key%></td>
+            <td><%=outboxCountData[key].length%></td>
+            <td><%= (totalUsers - sub) %> (<%= (((totalUsers - sub)/totalUsers)*100).toFixed(2) %>%)</td>
+        </tr>
+
+        <%
+            prevKey = key;
+        }
+        totalUsers = totalUsers + totalUsersWithoutInbox;
+        %>
+        <tr>
+            <td>Total</td>
+            <td><%= totalUsers%></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <table style="padding-left:20px">
+        <thead>
+        <th>Data Label</th>
+        <th>Data Value</th>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Total Messages Without Replies</td>
+            <td><%=totalMessagesSentWithoutReplies%></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>

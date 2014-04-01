@@ -18,10 +18,20 @@ a {
 	color: #c75f3e;
 }
 
-#mytable {
+#inboxtable {
 	width: 300px;
 	padding: 0;
 	margin: 0;
+    float:left;
+}
+
+
+#outboxtable {
+    width: 300px;
+    padding: 0;
+    margin: 0;
+    float:left;
+    padding-left:20px;
 }
 
 caption {
@@ -78,4 +88,8 @@ th.specalt {
 	background: #f5fafa url(images/bullet2.gif) no-repeat;
 	font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
 	color: #797268;
+}
+
+div{
+    height:auto
 }
