@@ -3,119 +3,66 @@ var CWMongoClient = require('../cw_mongo.js');
 var config = require('../config.js')();
 var _ = require('underscore');
 var async = require('async');
-
-
-function getUsersWithInbox(req, res) { 
-
-
-	//get max number of messages
-	getNumberOfMessages(function(messErr,inboxCountData){
-		console.log(inboxCountData);
-		if(!messErr && inboxCountData){
-			
-			getTotalUsersWithoutInbox(function(totErr, totalUsersWithoutInbox){
-
-                if(!totErr && totalUsersWithoutInbox){
-					
-					console.log(inboxCountData);
-
-					res.render('inboxSizes',{
-						"inboxCountData" : inboxCountData,
-						"totalUsersWithoutInbox" : totalUsersWithoutInbox 
-					});
-				}
-				else{
-					res.render('error', {'status' : totErr});
-				}
-			});
-
-		}
-		else{
-			res.render('error', {'status': messErr})
-		}
-
-	})
-
-
-}
-
-function getNumberOfMessages(callback){
-
-	CWMongoClient.getConnection(function (err, db) {
-    if (err) {
-        callback(err);
-    }
-    else {
-    	var collection = db.collection('users');
-
-    	collection
-    		.aggregate(
-    			[
-		    		{
-			    		$unwind : "$inbox"
-			    	},
-			    	{ $group: {
-			    			_id : "$user_id",
-			    			inboxSize : {$sum : 1}
-			    	}}
-			    ],
-	    	function(err, retObj){
-
-	    		if(!err && retObj){
-
-		    		var groupedInboxes = _.groupBy(retObj, function(n){
-		    			return n.inboxSize;
-		    		});
-
-		    		callback(null, groupedInboxes);
-		    	}
-		    	else{
-		    		callback(err);
-		    	}
-    	})
-
-    }
-	});
-}	
-
-function getTotalUsersWithoutInbox(callback){
-	
-	CWMongoClient.getConnection(function (err, db) {
-    if (err) {
-			callback(err);
-    }
-    else {	
-    	var collection = db.collection('users');
-    	var countQuery = collection.find({"user_id" : {$exists:true}, "inbox.1" : {$exists:false}});
-    	countQuery.count(function(qErr, numDocs){
-    		console.log(numDocs);
-    		callback(qErr, numDocs);
-    	})
-    }
-	});
-}
+var util = require('util');
 
 
 function getNumberOfUsersWithInboxOfSpecificSize(req,res) {
 
-    var startTimestamp = req.params.startTimestamp;
-    var endTimestamp = req.params.endTimestamp;
-    var range = null;
+    var startTimestamp = parseFloat(req.query.startTimestamp);
+    var endTimestamp = parseFloat(req.query.endTimestamp);
+    var range = undefined;
     if(startTimestamp && endTimestamp) {
         range = {"startTimestamp": startTimestamp, "endTimestamp": endTimestamp};
     }
-   
+/*
+    async.series([
+        function(seriesCallback){
+            getCountOfEachInbox(range, seriesCallback);
+        },
+        function(seriesCallback){
+            getCountOfFirstMessagesThatWereNeverClicked(range, seriesCallback);
+        },
+        function(seriesCallback){
+            getCountOfFirstMessagesThatWereNeverClicked(range, seriesCallback);
+        }
+
+    ],
+        function(err, results){
+            if(!err){
+                var user_inbox_counts = results[0];
+                var user_outbox_counts = results[1];
+                var count_of_messages_not_replied_to = results[2].length;
+
+                console.log("results");
+                console.log(results);
+
+                res.render('inboxSizes',{
+                    "inboxCountData" : user_inbox_counts,
+                    "outboxCountData" : user_outbox_counts,
+                    "totalUsersWithoutInbox" : 0,
+                    "totalMessagesSentWithoutReplies": count_of_messages_not_replied_to.length
+                });
+            }
+            else{
+                console.log(err);
+            }
+
+
+        });
+*/
     getCountOfEachInbox(range, function(err, user_inbox_counts){
         if(!err){
             getCountOfEachOutbox(range, function(oErr, user_outbox_counts){
                 if(!oErr){
                     getCountOfFirstMessagesThatWereNeverClicked(range, function(aErr, count_of_messages_not_replied_to){
                         if(!aErr){
+
                             res.render('inboxSizes',{
                                 "inboxCountData" : user_inbox_counts,
                                 "outboxCountData" : user_outbox_counts,
                                 "totalUsersWithoutInbox" : 0,
-                                "totalMessagesSentWithoutReplies": count_of_messages_not_replied_to.length
+                                "totalMessagesSentWithoutReplies": count_of_messages_not_replied_to.length,
+                                "range":range
                             });
                         }
                         else{
@@ -155,10 +102,13 @@ function getCountOfEachInbox(range, callback){
             var aggregation = [];
             var match = {"owner_role":"RECIPIENT"};
             if(range && range.startTimestamp && range.endTimestamp){
-                match["timestamp"]={ $gt : range.startTimestamp, $lte : range.endTimestamp };
+                match["timestamp"]={ "$gt" : range.startTimestamp, "$lte": range.endTimestamp };
             }
+            console.log(range);
             aggregation.push({$match:match});
             aggregation.push({$group:{_id:"$recipient_id", inboxSize:{$sum:1}}});
+
+            console.log(util.inspect(aggregation));
 
             collection.aggregate(aggregation, function(aErr,inboxes_count){
                 if(!aErr){
@@ -166,7 +116,6 @@ function getCountOfEachInbox(range, callback){
                     var groupedByInboxCount = _.groupBy(inboxes_count, function(n){
                         return n.inboxSize;
                     })
-                    console.log(groupedByInboxCount);
                     callback(null, groupedByInboxCount);
 
                 }
@@ -193,6 +142,7 @@ function getCountOfEachOutbox(range, callback){
             if(range && range.startTimestamp && range.endTimestamp){
                 match["timestamp"]={ $gt : range.startTimestamp, $lte : range.endTimestamp };
             }
+
             aggregation.push({$match:match});
             aggregation.push({$group:{_id:"$sender_id", outboxSize:{$sum:1}}});
 
@@ -202,7 +152,6 @@ function getCountOfEachOutbox(range, callback){
                     var groupedByOutboxCount = _.groupBy(outbox_count, function(n){
                         return n.outboxSize;
                     })
-                    console.log(groupedByOutboxCount);
                     callback(null, groupedByOutboxCount);
 
                 }
@@ -270,6 +219,5 @@ function getCountOfFirstMessagesThatWereNeverClicked(range, callback){
 
 
 
-exports.getUsersWithInbox = getUsersWithInbox;
 exports.getNumberOfUsersWithInboxOfSpecificSize = getNumberOfUsersWithInboxOfSpecificSize;
 exports.messagesWithUnknownRecipient = messagesWithUnknownRecipient;

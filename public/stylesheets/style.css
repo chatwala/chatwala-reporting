@@ -93,3 +93,16 @@ th.specalt {
 div{
     height:auto
 }
+
+#header{
+    width:100%;
+    height:40px;
+    color:black;
+    background-color: lightblue;
+
+}
+
+#header div, #header button{
+    float:left;
+    padding: 5px;
+}

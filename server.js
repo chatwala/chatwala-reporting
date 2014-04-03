@@ -68,7 +68,7 @@ if ('development' == app.get('env')) {
     app.use(express.errorHandler());
 }
 
-app.get('/getNumberOfUsersWithInbox', reporting.getUsersWithInbox);
+//app.get('/getNumberOfUsersWithInbox', reporting.getUsersWithInbox);
 app.get('/reporting2', reporting.getNumberOfUsersWithInboxOfSpecificSize);
 app.get('/outbox', reporting.messagesWithUnknownRecipient);
 

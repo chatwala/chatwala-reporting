@@ -2,7 +2,53 @@
 <html>
 <head>
 	<title>Chatwala-Reporting Inbox Size</title>
-	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+	<link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
+
+    <!-- date picker -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script>
+        $(function(){
+            $('#start_date').datepicker({
+                defaultDate: "+1",
+                changeMonth: true,
+                numberOfMonths: 3,
+                showOtherMonths:true
+            });
+            $('#end_date').datepicker({
+                defaultDate: "+2d",
+                changeMonth: true,
+                numberOfMonths: 3
+            });
+
+
+
+            $('#submit_date_range').click(function(){
+                var start = (new Date($('#start_date').val())).getTime();
+                var end = (new Date($('#end_date').val())).getTime();
+                if(end > start){
+                    window.location.href = getBaseURL() + "reporting2?startTimestamp=" + start + "&endTimestamp=" + end;
+                }
+                else{
+                    alert('The start date must precede the end date.');
+                }
+            })
+
+            $('#submit_reset_date_range').click(function(){
+                $('#start_date').val('');
+                $('#end_date').val('');
+
+            })
+
+            function getBaseURL () {
+                return location.protocol + "//" + location.hostname +
+                        (location.port && ":" + location.port) + "/";
+            }
+
+        })
+    </script>
+
 </head>
 <!-- Init ejs vars -->
 <%
@@ -12,9 +58,28 @@
 	for(var k in inboxCountData){
 		totalUsers += inboxCountData[k].length;
 	}
+
+    var get_formatted_date = function(date_obj){
+        console.log(date_obj);
+        return date_obj.getDate() + "/" + date_obj.getMonth() + "/" + date_obj.getFullYear();
+    }
 %>
 <body style='background:white'>
-<div>
+
+<div id="header">
+
+    <div>Start Date: <input type="text" id="start_date"></div>
+    <div>End Date: <input type="text" id="end_date"></div>
+    <button id="submit_date_range">Run For Dates</button>
+    <button id="submit_reset_date_range">Reset</button>
+    <span style="padding-left:20px">Current Date Range:
+    <%if(typeof range ==='undefined' || range==null){%>
+        All </span>
+    <%}else{%>
+        <%=get_formatted_date(new Date(range.startTimestamp))%>-<%=get_formatted_date(new Date(range.endTimestamp))%> </span>
+    <%}%>
+</div>
+<div style=" position: relative;">
 	<table id='inboxtable' >
 		<thead>
 			<tr>
