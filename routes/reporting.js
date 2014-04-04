@@ -98,11 +98,18 @@ function getTotalUsersWithoutInbox(callback){
 
 function getNumberOfUsersWithInboxOfSpecificSize(req,res) {
 
-    getCountOfEachInbox(function(err, user_inbox_counts){
+    var startTimestamp = req.params.startTimestamp;
+    var endTimestamp = req.params.endTimestamp;
+    var range = null;
+    if(startTimestamp && endTimestamp) {
+        range = {"startTimestamp": startTimestamp, "endTimestamp": endTimestamp};
+    }
+   
+    getCountOfEachInbox(range, function(err, user_inbox_counts){
         if(!err){
-            getCountOfEachOutbox(function(oErr, user_outbox_counts){
+            getCountOfEachOutbox(range, function(oErr, user_outbox_counts){
                 if(!oErr){
-                    getCountOfMessagesSentButNotRepliedTo(function(aErr, count_of_messages_not_replied_to){
+                    getCountOfFirstMessagesThatWereNeverClicked(range, function(aErr, count_of_messages_not_replied_to){
                         if(!aErr){
                             res.render('inboxSizes',{
                                 "inboxCountData" : user_inbox_counts,
@@ -136,7 +143,7 @@ function getNumberOfUsersWithInboxOfSpecificSize(req,res) {
 
 }
 
-function getCountOfEachInbox(callback){
+function getCountOfEachInbox(range, callback){
     CWMongoClient.getConnection(function (err, db) {
         if (err) {
             callback(err);
@@ -146,7 +153,11 @@ function getCountOfEachInbox(callback){
             var collection = db.collection('messages');
 
             var aggregation = [];
-            aggregation.push({$match:{"owner_role":"RECIPIENT"}});
+            var match = {"owner_role":"RECIPIENT"};
+            if(range && range.startTimestamp && range.endTimestamp){
+                match["timestamp"]={ $gt : range.startTimestamp, $lte : range.endTimestamp };
+            }
+            aggregation.push({$match:match});
             aggregation.push({$group:{_id:"$recipient_id", inboxSize:{$sum:1}}});
 
             collection.aggregate(aggregation, function(aErr,inboxes_count){
@@ -168,7 +179,7 @@ function getCountOfEachInbox(callback){
     })
 }
 
-function getCountOfEachOutbox(callback){
+function getCountOfEachOutbox(range, callback){
     CWMongoClient.getConnection(function (err, db) {
         if (err) {
             callback(err);
@@ -178,7 +189,11 @@ function getCountOfEachOutbox(callback){
             var collection = db.collection('messages');
 
             var aggregation = [];
-            aggregation.push({$match:{"owner_role":"SENDER"}});
+            var match = {"owner_role":"SENDER"};
+            if(range && range.startTimestamp && range.endTimestamp){
+                match["timestamp"]={ $gt : range.startTimestamp, $lte : range.endTimestamp };
+            }
+            aggregation.push({$match:match});
             aggregation.push({$group:{_id:"$sender_id", outboxSize:{$sum:1}}});
 
             collection.aggregate(aggregation, function(aErr,outbox_count){
@@ -215,7 +230,7 @@ function messagesWithUnknownRecipient(req,res){
 }
 
 
-function getCountOfMessagesSentButNotRepliedTo(callback){
+function getCountOfFirstMessagesThatWereNeverClicked(range, callback){
     CWMongoClient.getConnection(function (err, db) {
         if (err) {
             callback(err);
@@ -224,7 +239,15 @@ function getCountOfMessagesSentButNotRepliedTo(callback){
 
             var collection = db.collection('messages');
 
-            var aggregation = {$group:{_id:"$message_id", messagesCount:{$sum:1}}};
+            var match = {};
+
+            if(range && range.startTimestamp && range.endTimestamp){
+                match["timestamp"]={ $gt : range.startTimestamp, $lte : range.endTimestamp };
+            }
+
+            var aggregation = [];
+            aggregation.push({$match: match});
+            aggregation.push({$group:{_id:"$message_id", messagesCount:{$sum:1}}});
 
             collection.aggregate(aggregation,function(aErr, total_inboxes){
                 if(!aErr){
