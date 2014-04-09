@@ -193,7 +193,7 @@ function getCountOfFirstMessagesThatWereNeverClicked(range, callback){
             if(range && range.startTimestamp && range.endTimestamp){
                 match["timestamp"]={ $gt : range.startTimestamp, $lte : range.endTimestamp };
             }
-
+            
             var aggregation = [];
             aggregation.push({$match: match});
             aggregation.push({$group:{_id:"$message_id", messagesCount:{$sum:1}}});

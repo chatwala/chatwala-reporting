@@ -38,7 +38,7 @@
             $('#submit_reset_date_range').click(function(){
                 $('#start_date').val('');
                 $('#end_date').val('');
-
+                window.location.href = getBaseURL() + "reporting2";
             })
 
             function getBaseURL () {
@@ -89,11 +89,6 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td>0</td>
-				<td><%= totalUsersWithoutInbox %></td>
-				<td>-</td>
-			</tr>
 			<!-- loop through for each count of messages in inbox -->
 			<% for(var key in inboxCountData){ 
 				if(prevKey == '-1'){
@@ -132,11 +127,6 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>0</td>
-            <td><%= totalUsersWithoutInbox %></td>
-            <td>-</td>
-        </tr>
         <!-- loop through for each count of messages in inbox -->
         <%
         var totalUsers = 0;
