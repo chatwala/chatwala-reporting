@@ -56,14 +56,24 @@ function getNumberOfUsersWithInboxOfSpecificSize(req,res) {
                 if(!oErr){
                     getCountOfFirstMessagesThatWereNeverClicked(range, function(aErr, count_of_messages_not_replied_to){
                         if(!aErr){
-
-                            res.render('inboxSizes',{
-                                "inboxCountData" : user_inbox_counts,
-                                "outboxCountData" : user_outbox_counts,
-                                "totalUsersWithoutInbox" : 0,
-                                "totalMessagesSentWithoutReplies": count_of_messages_not_replied_to.length,
-                                "range":range
-                            });
+                            getNumMessagesPerThread(range, function(bErr,conversations_per_user,messages_per_conversation){
+                                if(!bErr){
+                                    res.render('inboxSizes',{
+                                        "inboxCountData" : user_inbox_counts,
+                                        "outboxCountData" : user_outbox_counts,
+                                        "totalUsersWithoutInbox" : 0,
+                                        "totalMessagesSentWithoutReplies": count_of_messages_not_replied_to.length,
+                                        "range":range,
+                                        "convosPerUser":conversations_per_user,
+                                        "messagesPerConvo":messages_per_conversation
+                                    });
+                                }
+                                else{
+                                    console.log("error on thread query");
+                                    console.log(bErr);
+                                    res.send(404);
+                                }
+                            })
                         }
                         else{
                             console.log("there was an error on get count of messages sent but not replied to")
@@ -206,6 +216,111 @@ function getCountOfFirstMessagesThatWereNeverClicked(range, callback){
                    })
 
                    callback(null, grouped_total_inboxes["1"]);
+
+                }
+                else{
+                    callback(aErr);
+                }
+            })
+
+        }
+    });
+}
+
+
+function getNumMessagesPerThread(range, callback){
+    CWMongoClient.getConnection(function (err, db) {
+        if (err) {
+            callback(err);
+        }
+        else {
+
+            var collection = db.collection('messages');
+
+            var match = {};
+            var project = {};
+            var group = {};
+
+            project['owner_user_id'] = 1;
+            project['thread_id'] = 1;
+            project['owner_role'] = 1;
+            project['unknown_recipient_starter'] = 1;
+
+            match["unknown_recipient_starter"] = false;
+            if(range && range.startTimestamp && range.endTimestamp){
+                match["timestamp"]={ $gt : range.startTimestamp, $lte : range.endTimestamp };
+            }
+
+            group["_id"]="$thread_id";
+            group["messages_in_thread"]= {"$sum":1};
+            group["user_ids"] = {"$addToSet":"$owner_user_id"};
+
+
+            var aggregation = [];
+            aggregation.push({$project: project});
+            aggregation.push({$match: match});
+            aggregation.push({$group:group});
+
+            collection.aggregate(aggregation,function(aErr, thread_results){
+                if(!aErr){
+
+                    var threadsByUser = {};
+
+                    for(var i= 0;i<thread_results.length;i++){
+                        var user1 = thread_results[i].user_ids[0];
+                        var user2 = thread_results[i].user_ids[1]
+
+                        if(typeof user1 !== 'undefined' && threadsByUser.hasOwnProperty(user1)){
+                            threadsByUser[user1].thread_count += 1;
+                        }
+                        else{
+                            threadsByUser[user1] = {thread_count : 1};
+                        }
+
+                        if(typeof user2 !== 'undefined' && threadsByUser.hasOwnProperty(user2)){
+                            threadsByUser[user2].thread_count += 1;
+                        }
+                        else{
+                            threadsByUser[user2] = {thread_count : 1};
+                        }
+                    }
+
+
+                    var num_threads_for_each_user = _.groupBy(threadsByUser, function(k){
+                        return k.thread_count;
+                    })
+
+
+                    var conversations_per_user = [];
+
+                    for(var j in num_threads_for_each_user){
+                        console.log(j + " " + num_threads_for_each_user[j].length);
+                        var t = num_threads_for_each_user[j].length;
+                        conversations_per_user.push({
+                            "num_conversations" : j,
+                            "num_users_with_x_conversations" : t
+                        });
+
+                    }
+
+
+                    var threads_grouped_by_count = _.groupBy(thread_results, function(n){
+                        return n.messages_in_thread;
+                    })
+
+                    var messages_per_conversation = [];
+
+                    for(var m in threads_grouped_by_count){
+                        console.log(m + " " + threads_grouped_by_count[m].length);
+                        var t = threads_grouped_by_count[m].length;
+                        messages_per_conversation.push({
+                            "num_messages" : m,
+                            "num_threads_with_x_messages" : t
+                        })
+
+                    }
+
+                    callback(null, conversations_per_user,messages_per_conversation);
 
                 }
                 else{

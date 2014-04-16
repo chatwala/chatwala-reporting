@@ -63,6 +63,19 @@
         console.log(date_obj);
         return (date_obj.getMonth()+1) + "/" + date_obj.getDate() +  "/" + date_obj.getFullYear();
     }
+
+    var total_users_with_conversations = 0;
+    var total_threads_with_messages = 0;
+
+    for(var i=0;i<convosPerUser.length;i++){
+        total_users_with_conversations += convosPerUser[i].num_users_with_x_conversations;
+    }
+
+    for(var j=0;j<messagesPerConvo.length;j++){
+        total_threads_with_messages += messagesPerConvo[j].num_threads_with_x_messages;
+    }
+
+
 %>
 <body style='background:white'>
 
@@ -85,7 +98,7 @@
 			<tr>
 				<th># of messages (X)</th>
 				<th># of users</th>
-				<th># of uers with X or more messages</th>
+				<th># of users with X or more messages</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -123,7 +136,7 @@
         <tr>
             <th># of messages (X)</th>
             <th># of users</th>
-            <th># of uers with X or more outbound messages</th>
+            <th># of users with X or more outbound messages</th>
         </tr>
         </thead>
         <tbody>
@@ -163,6 +176,96 @@
         </tbody>
     </table>
 </div>
+<div>
+    <table id="conversationstable">
+        <thead>
+        <tr>
+            <th># of conversations (x))</th>
+            <th># of users</th>
+            <th># of users with X or more conversations</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- loop through for each count of messages in inbox -->
+        <%
+        var prevKey = '-1';
+        var sub = 0;
+        var totalConversations=0;
+
+        for(var k=0; k<convosPerUser.length;k++){
+            if(prevKey == '-1'){
+                sub = 0;
+            }
+            else{
+                sub += convosPerUser[prevKey].num_users_with_x_conversations;
+            }
+        %>
+        <tr>
+            <td><%=convosPerUser[k].num_conversations%></td>
+            <td><%=convosPerUser[k].num_users_with_x_conversations%></td>
+            <td><%= (total_users_with_conversations - sub) %> (<%= (((total_users_with_conversations - sub)/total_users_with_conversations)*100).toFixed(2) %>%)</td>
+        </tr>
+
+        <%
+            prevKey = k;
+            totalConversations += (convosPerUser[k].num_conversations * convosPerUser[k].num_users_with_x_conversations);
+        }
+
+        %>
+        <tr>
+            <td>Total Conversations</td>
+            <td><%= totalConversations%></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <table id="messageConversationTable">
+        <thead>
+        <tr>
+            <th># of messages in a conversation(x))</th>
+            <th># of conversations</th>
+            <th># of conversations with X or more messages</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- loop through for each count of messages in inbox -->
+        <%
+        var prevKey = '-1';
+        var sub = 0;
+        var totalMessages=0;
+
+        for(var k=0; k<messagesPerConvo.length;k++){
+            if(prevKey == '-1'){
+                sub = 0;
+            }
+            else{
+                sub += messagesPerConvo[prevKey].num_threads_with_x_messages;
+            }
+        %>
+        <tr>
+            <td><%=messagesPerConvo[k].num_messages%></td>
+            <td><%=messagesPerConvo[k].num_threads_with_x_messages%></td>
+            <td><%= (total_threads_with_messages - sub) %> (<%= (((total_threads_with_messages - sub)/total_threads_with_messages)*100).toFixed(2) %>%)</td>
+        </tr>
+
+        <%
+            prevKey = k;
+            totalMessages += (messagesPerConvo[k].num_messages * messagesPerConvo[k].num_threads_with_x_messages);
+        }
+
+        %>
+        <tr>
+            <td>Total Messages</td>
+            <td><%= totalMessages%></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
 <div>
     <table style="padding-left:20px">
         <thead>
