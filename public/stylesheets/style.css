@@ -1,8 +1,3 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
 a {
   color: #00B7FF;
 }
@@ -66,7 +61,6 @@ th {
 	text-transform: uppercase;
 	text-align: center;
 	padding: 6px 6px 6px 12px;
-	background: #CAE8EA url(images/bg_header.jpg) no-repeat;
 }
 
 th.nobg {
@@ -93,14 +87,12 @@ td.alt {
 th.spec {
 	border-left: 1px solid #C1DAD7;
 	border-top: 0;
-	background: #fff url(images/bullet1.gif) no-repeat;
 	font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
 }
 
 th.specalt {
 	border-left: 1px solid #C1DAD7;
 	border-top: 0;
-	background: #f5fafa url(images/bullet2.gif) no-repeat;
 	font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
 	color: #797268;
 }
