@@ -245,8 +245,11 @@ function getNumMessagesPerThread(range, callback){
             project['thread_id'] = 1;
             project['owner_role'] = 1;
             project['unknown_recipient_starter'] = 1;
+            project['timestamp']=1;
 
             match["unknown_recipient_starter"] = false;
+            match["owner_role"] = "RECIPIENT";
+            match["thread_id"]={"$ne":"null"};
             if(range && range.startTimestamp && range.endTimestamp){
                 match["timestamp"]={ $gt : range.startTimestamp, $lte : range.endTimestamp };
             }
@@ -284,7 +287,6 @@ function getNumMessagesPerThread(range, callback){
                             threadsByUser[user2] = {thread_count : 1};
                         }
                     }
-
 
                     var num_threads_for_each_user = _.groupBy(threadsByUser, function(k){
                         return k.thread_count;
