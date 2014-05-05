@@ -266,7 +266,7 @@ function getNumMessagesPerThread(range, callback){
 
             collection.aggregate(aggregation,function(aErr, thread_results){
                 if(!aErr){
-
+                    console.log(thread_results);
                     var threadsByUser = {};
 
                     for(var i= 0;i<thread_results.length;i++){
@@ -287,6 +287,8 @@ function getNumMessagesPerThread(range, callback){
                             threadsByUser[user2] = {thread_count : 1};
                         }
                     }
+
+                    //console.log(threadsByUser);
 
                     var num_threads_for_each_user = _.groupBy(threadsByUser, function(k){
                         return k.thread_count;

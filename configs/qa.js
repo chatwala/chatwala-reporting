@@ -1,6 +1,6 @@
 module.exports = {
     "db": {
-        "mongodb": "mongodb://chatwala-dev:OFXd6OICqM8vr.ME3OCbh.l2T9GjAuXFF.7Hp9gDXNE-@ds030607.mongolab.com:30607/chatwala-dev"
+        "mongodb": "mongodb://chatwala-qa:kfCqmBxGNV7ErnGrOK8ODFm8iMRukeqf3quz0ZOiL.o-@ds035747.mongolab.com:35747/chatwala-qa"
     },
     "azure": { 
         "storage_name": "chatwalaqa",

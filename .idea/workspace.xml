@@ -1,0 +1,947 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8aa3df64-3181-4419-b82b-5b6a1a860682" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/QueriesApi.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/queries/TopXPercentActiveUsers.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/notifications.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/configs/qa.js" afterPath="$PROJECT_DIR$/configs/qa.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/reporting.js" afterPath="$PROJECT_DIR$/routes/reporting.js" />
+    </list>
+    <ignored path="chatwala-reporting.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="chatwala-reporting" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="reporting.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/reporting.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="173" column="6" selection-start="5067" selection-end="6073" vertical-scroll-proportion="0.0" vertical-offset="1995" max-vertical-offset="5220">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="notifications.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/notifications.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="55" column="0" selection-start="1496" selection-end="1496" vertical-scroll-proportion="1.2114538" vertical-offset="0" max-vertical-offset="1380">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QueriesApi.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/QueriesApi.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="14" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="270">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TopXPercentActiveUsers.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/queries/TopXPercentActiveUsers.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="4" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="1035">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="qa.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/configs/qa.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="126" selection-start="157" selection-end="157" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="285">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inboxSizes.ejs" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/inboxSizes.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="182" column="38" selection-start="5137" selection-end="5137" vertical-scroll-proportion="0.0" vertical-offset="1680" max-vertical-offset="4335">
+              <folding>
+                <marker date="1397691517000" expanded="true" signature="1861:1907" placeholder="{...}" />
+                <marker date="1397691517000" expanded="true" signature="1956:2093" placeholder="{...}" />
+                <marker date="1397691517000" expanded="true" signature="2224:2322" placeholder="{...}" />
+                <marker date="1397691517000" expanded="true" signature="2370:2465" placeholder="{...}" />
+                <marker date="1397691517000" expanded="true" signature="2867:2898" placeholder="{...}" />
+                <marker date="1397691517000" expanded="true" signature="2902:3039" placeholder="{...}" />
+                <marker date="1397691517000" expanded="true" signature="3358:3691" placeholder="{...}" />
+                <marker date="1397691517000" expanded="true" signature="3384:3405" placeholder="{...}" />
+                <marker date="1397691517000" expanded="true" signature="3414:3465" placeholder="{...}" />
+                <marker date="1397691517000" expanded="true" signature="4285:4349" placeholder="{...}" />
+                <marker date="1397691517000" expanded="true" signature="4391:4829" placeholder="{...}" />
+                <marker date="1397691517000" expanded="true" signature="4424:4464" placeholder="{...}" />
+                <marker date="1397691517000" expanded="true" signature="4481:4552" placeholder="{...}" />
+                <marker date="1397691517000" expanded="true" signature="5492:6183" placeholder="{...}" />
+                <marker date="1397691517000" expanded="true" signature="5525:5565" placeholder="{...}" />
+                <marker date="1397691517000" expanded="true" signature="5582:5675" placeholder="{...}" />
+                <marker date="1397691517000" expanded="true" signature="6839:7512" placeholder="{...}" />
+                <marker date="1397691517000" expanded="true" signature="6872:6912" placeholder="{...}" />
+                <marker date="1397691517000" expanded="true" signature="6929:7022" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="iisnode.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/iisnode.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="22" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="105">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="63" column="31" selection-start="1062" selection-end="1062" vertical-scroll-proportion="0.0" vertical-offset="945" max-vertical-offset="1815">
+              <folding>
+                <marker date="1397690756000" expanded="true" signature="515:590" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="73" column="0" selection-start="1859" selection-end="1859" vertical-scroll-proportion="0.0" vertical-offset="1095" max-vertical-offset="1320">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
+        <option value="$PROJECT_DIR$/views/inboxSizes.ejs" />
+        <option value="$PROJECT_DIR$/routes/reporting.js" />
+        <option value="$PROJECT_DIR$/configs/qa.js" />
+        <option value="$PROJECT_DIR$/routes/queries/TopXPercentActiveUsers.js" />
+        <option value="$PROJECT_DIR$/routes/queries.js" />
+        <option value="$PROJECT_DIR$/routes/QueriesApi.js" />
+        <option value="$PROJECT_DIR$/routes/notifications.js" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="21" />
+    <option name="y" value="22" />
+    <option name="width" value="1419" />
+    <option name="height" value="801" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="Scope" currentSubView="Project Files" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chatwala-reporting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chatwala-reporting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chatwala-reporting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chatwala-reporting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chatwala-reporting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="routes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="chatwala-reporting">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="chatwala-reporting">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="routes">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="chatwala-reporting">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="routes">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="queries">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Development/meteor_test/telephone-pictionary" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FullScreen" value="false" />
+    <property name="SearchEverywhereHistory" value="&#10;{" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="name" value="Dart" />
+      <option name="saveOutputToFile" value="false" />
+      <option name="showConsoleOnStdErr" value="false" />
+      <option name="showConsoleOnStdOut" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
+      <setting name="configLocationType" value="CONFIG_FILE" />
+      <setting name="settingsFile" value="" />
+      <setting name="serverType" value="INTERNAL" />
+      <setting name="preferredDebugBrowser" value="CHROME" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <browser start="false" url="" with-js-debugger="false" />
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8aa3df64-3181-4419-b82b-5b6a1a860682" name="Default" comment="" />
+      <created>1395787892596</created>
+      <updated>1395787892596</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="21" y="22" width="1419" height="801" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16452074" sideWeight="0.809591" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16452074" sideWeight="0.19040902" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32863188" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USERS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="31" selection-start="1062" selection-end="1062" vertical-scroll-proportion="0.0" vertical-offset="650" max-vertical-offset="1815">
+          <folding>
+            <marker date="1397690756000" expanded="true" signature="515:590" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="0" selection-start="1859" selection-end="1859" vertical-scroll-proportion="0.0" vertical-offset="1095" max-vertical-offset="1320">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/reporting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="263" column="33" selection-start="8693" selection-end="8693" vertical-scroll-proportion="0.0" vertical-offset="3945" max-vertical-offset="5190">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/inboxSizes.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="182" column="38" selection-start="5137" selection-end="5137" vertical-scroll-proportion="0.0" vertical-offset="2730" max-vertical-offset="4335">
+          <folding>
+            <marker date="1397691517000" expanded="true" signature="1861:1907" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="1956:2093" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2224:2322" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2370:2465" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2867:2898" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2902:3039" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3358:3691" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3384:3405" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3414:3465" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4285:4349" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4391:4829" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4424:4464" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4481:4552" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5492:6183" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5525:5565" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5582:5675" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6839:7512" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6872:6912" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6929:7022" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iisnode.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="22" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="105">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="31" selection-start="1062" selection-end="1062" vertical-scroll-proportion="0.0" vertical-offset="650" max-vertical-offset="1815">
+          <folding>
+            <marker date="1397690756000" expanded="true" signature="515:590" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="0" selection-start="1859" selection-end="1859" vertical-scroll-proportion="0.0" vertical-offset="1095" max-vertical-offset="1320">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/reporting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="13" selection-start="1644" selection-end="1644" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="3420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/inboxSizes.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="0" selection-start="2148" selection-end="2148" vertical-scroll-proportion="0.0" vertical-offset="1035" max-vertical-offset="2790">
+          <folding>
+            <marker date="1397691517000" expanded="true" signature="1861:1907" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="1956:2093" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2224:2322" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2370:2465" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2867:2898" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2902:3039" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3358:3691" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3384:3405" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3414:3465" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4285:4349" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4391:4829" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4424:4464" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4481:4552" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5492:6183" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5525:5565" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5582:5675" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6839:7512" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6872:6912" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6929:7022" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="13" selection-start="1710" selection-end="1710" vertical-scroll-proportion="0.0" vertical-offset="1470" max-vertical-offset="1695">
+          <folding>
+            <marker date="1397690756000" expanded="true" signature="515:590" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="41" selection-start="1507" selection-end="1507" vertical-scroll-proportion="0.0" vertical-offset="915" max-vertical-offset="1305">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/reporting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="13" selection-start="1644" selection-end="1644" vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="3420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/inboxSizes.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="0" selection-start="2148" selection-end="2148" vertical-scroll-proportion="0.0" vertical-offset="1035" max-vertical-offset="2790">
+          <folding>
+            <marker date="1397691517000" expanded="true" signature="1861:1907" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="1956:2093" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2224:2322" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2370:2465" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2867:2898" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2902:3039" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3358:3691" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3384:3405" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3414:3465" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4285:4349" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4391:4829" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4424:4464" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4481:4552" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5492:6183" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5525:5565" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5582:5675" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6839:7512" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6872:6912" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6929:7022" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="13" selection-start="1710" selection-end="1710" vertical-scroll-proportion="0.0" vertical-offset="1470" max-vertical-offset="1695">
+          <folding>
+            <marker date="1397690756000" expanded="true" signature="515:590" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="41" selection-start="1507" selection-end="1507" vertical-scroll-proportion="0.0" vertical-offset="915" max-vertical-offset="1305">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/reporting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="13" selection-start="1644" selection-end="1644" vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="3420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/inboxSizes.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="0" selection-start="2148" selection-end="2148" vertical-scroll-proportion="0.0" vertical-offset="1035" max-vertical-offset="2790">
+          <folding>
+            <marker date="1397691517000" expanded="true" signature="1861:1907" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="1956:2093" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2224:2322" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2370:2465" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2867:2898" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2902:3039" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3358:3691" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3384:3405" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3414:3465" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4285:4349" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4391:4829" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4424:4464" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4481:4552" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5492:6183" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5525:5565" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5582:5675" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6839:7512" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6872:6912" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6929:7022" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="13" selection-start="1710" selection-end="1710" vertical-scroll-proportion="0.0" vertical-offset="1470" max-vertical-offset="1695">
+          <folding>
+            <marker date="1397690756000" expanded="true" signature="515:590" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="41" selection-start="1507" selection-end="1507" vertical-scroll-proportion="0.0" vertical-offset="915" max-vertical-offset="1305">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/reporting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="21" selection-start="1618" selection-end="1618" vertical-scroll-proportion="0.0" vertical-offset="585" max-vertical-offset="3420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/inboxSizes.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="34" selection-start="2347" selection-end="2347" vertical-scroll-proportion="0.0" vertical-offset="1110" max-vertical-offset="2940">
+          <folding>
+            <marker date="1397691517000" expanded="true" signature="1861:1907" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="1956:2093" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2224:2322" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2370:2465" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2867:2898" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2902:3039" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3358:3691" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3384:3405" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3414:3465" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4285:4349" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4391:4829" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4424:4464" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4481:4552" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5492:6183" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5525:5565" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5582:5675" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6839:7512" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6872:6912" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6929:7022" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="13" selection-start="1710" selection-end="1710" vertical-scroll-proportion="0.0" vertical-offset="1014" max-vertical-offset="1695">
+          <folding>
+            <marker date="1397690756000" expanded="true" signature="515:590" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="41" selection-start="1507" selection-end="1507" vertical-scroll-proportion="0.0" vertical-offset="915" max-vertical-offset="1305">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/reporting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="21" selection-start="1618" selection-end="1618" vertical-scroll-proportion="0.0" vertical-offset="585" max-vertical-offset="3420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/inboxSizes.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="34" selection-start="2347" selection-end="2347" vertical-scroll-proportion="0.0" vertical-offset="1110" max-vertical-offset="2940">
+          <folding>
+            <marker date="1397691517000" expanded="true" signature="1861:1907" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="1956:2093" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2224:2322" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2370:2465" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2867:2898" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2902:3039" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3358:3691" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3384:3405" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3414:3465" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4285:4349" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4391:4829" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4424:4464" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4481:4552" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5492:6183" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5525:5565" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5582:5675" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6839:7512" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6872:6912" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6929:7022" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="13" selection-start="1710" selection-end="1710" vertical-scroll-proportion="0.0" vertical-offset="1014" max-vertical-offset="1695">
+          <folding>
+            <marker date="1397690756000" expanded="true" signature="515:590" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="41" selection-start="1507" selection-end="1507" vertical-scroll-proportion="0.0" vertical-offset="915" max-vertical-offset="1305">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/reporting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="107" selection-start="2370" selection-end="2370" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="3420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/inboxSizes.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="34" selection-start="2347" selection-end="2347" vertical-scroll-proportion="0.0" vertical-offset="1110" max-vertical-offset="2940">
+          <folding>
+            <marker date="1397691517000" expanded="true" signature="1861:1907" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="1956:2093" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2224:2322" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2370:2465" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2867:2898" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2902:3039" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3358:3691" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3384:3405" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3414:3465" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4285:4349" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4391:4829" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4424:4464" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4481:4552" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5492:6183" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5525:5565" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5582:5675" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6839:7512" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6872:6912" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6929:7022" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="13" selection-start="1710" selection-end="1710" vertical-scroll-proportion="0.0" vertical-offset="1014" max-vertical-offset="1695">
+          <folding>
+            <marker date="1397690756000" expanded="true" signature="515:590" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="41" selection-start="1507" selection-end="1507" vertical-scroll-proportion="0.0" vertical-offset="915" max-vertical-offset="1305">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/reporting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="104" column="53" selection-start="2202" selection-end="2202" vertical-scroll-proportion="0.0" vertical-offset="1560" max-vertical-offset="3855">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/inboxSizes.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="123" column="6" selection-start="2831" selection-end="2831" vertical-scroll-proportion="0.0" vertical-offset="1218" max-vertical-offset="1965">
+          <folding>
+            <marker date="1397691517000" expanded="true" signature="1861:1907" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="1956:2093" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2224:2322" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2370:2465" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2867:2898" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2902:3039" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3358:3691" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3384:3405" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3414:3465" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4285:4349" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4391:4829" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4424:4464" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4481:4552" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5492:6183" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5525:5565" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5582:5675" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6839:7512" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6872:6912" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6929:7022" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="1" selection-start="253" selection-end="253" vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="1500">
+          <folding>
+            <marker date="1397690756000" expanded="true" signature="515:590" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="20" selection-start="1732" selection-end="1742" vertical-scroll-proportion="0.0" vertical-offset="624" max-vertical-offset="1305">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/reporting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="29" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="3855">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/inboxSizes.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="123" column="6" selection-start="2831" selection-end="2831" vertical-scroll-proportion="0.0" vertical-offset="1218" max-vertical-offset="1965">
+          <folding>
+            <marker date="1397691517000" expanded="true" signature="1861:1907" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="1956:2093" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2224:2322" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2370:2465" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2867:2898" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2902:3039" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3358:3691" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3384:3405" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3414:3465" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4285:4349" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4391:4829" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4424:4464" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4481:4552" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5492:6183" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5525:5565" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5582:5675" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6839:7512" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6872:6912" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6929:7022" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="1" selection-start="253" selection-end="253" vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="1500">
+          <folding>
+            <marker date="1397690756000" expanded="true" signature="515:590" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="16" selection-start="1813" selection-end="1813" vertical-scroll-proportion="0.0" vertical-offset="609" max-vertical-offset="1305">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/reporting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="200" column="0" selection-start="4400" selection-end="4400" vertical-scroll-proportion="0.0" vertical-offset="3000" max-vertical-offset="3090">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="35" selection-start="1664" selection-end="1689" vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="1275">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/reporting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="173" column="6" selection-start="5067" selection-end="6073" vertical-scroll-proportion="0.0" vertical-offset="1995" max-vertical-offset="5220">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iisnode.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="22" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="31" selection-start="1062" selection-end="1062" vertical-scroll-proportion="0.0" vertical-offset="650" max-vertical-offset="1815">
+          <folding>
+            <marker date="1397690756000" expanded="true" signature="515:590" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="0" selection-start="1859" selection-end="1859" vertical-scroll-proportion="0.0" vertical-offset="579" max-vertical-offset="1320">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/inboxSizes.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="182" column="38" selection-start="5137" selection-end="5137" vertical-scroll-proportion="0.0" vertical-offset="1680" max-vertical-offset="4335">
+          <folding>
+            <marker date="1397691517000" expanded="true" signature="1861:1907" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="1956:2093" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2224:2322" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2370:2465" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2867:2898" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="2902:3039" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3358:3691" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3384:3405" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="3414:3465" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4285:4349" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4391:4829" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4424:4464" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="4481:4552" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5492:6183" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5525:5565" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="5582:5675" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6839:7512" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6872:6912" placeholder="{...}" />
+            <marker date="1397691517000" expanded="true" signature="6929:7022" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/qa.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="126" selection-start="157" selection-end="157" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/queries/TopXPercentActiveUsers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="4" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1005">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/mongodb/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="222" column="72" selection-start="3639" selection-end="3639" vertical-scroll-proportion="0.50276244" vertical-offset="3148" max-vertical-offset="3555" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/QueriesApi.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="14" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/notifications.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="0" selection-start="1496" selection-end="1496" vertical-scroll-proportion="1.2114538" vertical-offset="0" max-vertical-offset="1380">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+
