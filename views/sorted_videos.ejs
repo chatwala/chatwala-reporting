@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Videos with Users</title>
+</head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+    window.onload = function(){
+
+        var populateConvoList = function(current){
+
+
+            var c = $("#convo_container");
+            c.empty();
+
+            var current_user_id = current;
+            var msg_thumbnail_container_url = "<%= message_thumbnail_url %>";
+            var blob_url = "<%= blob_url %>";
+
+
+            for(var i=0;i<the_users[current_user_id].length;i++){
+
+                var to_insert = "<a href='"+blob_url+"/"+the_users[current_user_id][i].message_id+"'> <img width='150px' height='70px' src='"+msg_thumbnail_container_url+"/"+the_users[current_user_id][i].message_id+"' alt='' onerror='imgError(this,\""+current_user_id+"\")'/></a>"
+    
+                c.append(to_insert);
+
+
+            }
+
+        }
+
+
+
+        $('.upp').click(function(){
+            populateConvoList($(this).attr("id"));
+        })
+
+        console.log(the_users);
+    };
+
+    var imgError = function(image,url) {
+        image.onerror = "";
+        image.src = "<%= profile_url %>" + url;
+        return true;
+    }
+
+
+</script>
+<body>
+<%//Init ejs variables
+    var user_profile_url = profile_url;
+
+  %>
+    <div style="height:50px"><span>User Inbox</span><span style="margin-left:150px">Conversations</span></div>
+<div style="width:200px;height:600px; overflow-y:scroll;position:fixed">
+
+        <%for(var u in users){%>
+            <div class="upp" style="float:left" id="<%=u%>">
+                <img height="100px" width="150px" src="<%=user_profile_url+u%>" alt="Very Nice" />
+            </div>
+        <%}%>
+</div>
+
+<div id="convo_container" style="width:155px;height:600px;overflow-y:scroll;position:fixed;left:180px">
+
+</div>
+</body>
+<script>
+    the_users = {}
+<%for(var s in users){%>
+    var c = "<%=s%>";
+    the_users[c] = [];
+    var current_user = the_users[c];
+
+    <%for(var i=0;i<users[s].length;i++){%>
+
+       current_user.push( {
+            "message_id":"<%=users[s][i].message_id%>",
+           "sender_id":"<%=users[s][i].sender_id%>",
+           "thread_id":"<%=users[s][i].thread_id%>",
+           "thread_index":<%=users[s][i].thread_index%>,
+           "replying_to_message_id":"<%=users[s][i].replying_to_message_id%>"
+       });
+
+    <%}}%>
+
+    console.log(the_users);
+</script>
+</html>

@@ -1,6 +1,6 @@
 var azure = require("azure");
 var CWMongoClient = require('../cw_mongo.js');
-var config = require('../config.js')();
+var config = require('../config.js');
 var _ = require('underscore');
 var async = require('async');
 var util = require('util');

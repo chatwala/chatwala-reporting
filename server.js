@@ -3,12 +3,11 @@
  */
 
 console.log("Initializing node: " + new Date());
-var config = require('./config.js')();
+var config = require('./config.js');
 
 "use strict";
 var express = require('express');
-var reporting = require('./routes/reporting.js');
-var routes = require('./routes');
+var api = require('./routes/api.js');
 var mongoClient = require('./cw_mongo.js');
 
 var clientID = "58041de0bc854d9eb514d2f22d50ad4c";
@@ -69,8 +68,10 @@ if ('development' == app.get('env')) {
 }
 
 //app.get('/getNumberOfUsersWithInbox', reporting.getUsersWithInbox);
-app.get('/reporting2', reporting.getNumberOfUsersWithInboxOfSpecificSize);
-app.get('/outbox', reporting.messagesWithUnknownRecipient);
+app.get('/reporting2', api.reporting.getNumberOfUsersWithInboxOfSpecificSize);
+app.get('/outbox', api.reporting.messagesWithUnknownRecipient);
+app.get('/videos', api.videos.index);
+app.post('/getInbox',api.videos.inbox);
 
 
 var server = http.createServer(app);
