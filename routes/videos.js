@@ -41,7 +41,8 @@ var videos = (function(){
                     "users":groupAndSortByUser,
                     "profile_url":config.azure.nonShardedBlobStorage.base_url,
                     "message_thumbnail_url":config.azure.blobStorageShard.s1.base_url + config.azure.blobStorageShard.s1.message_thumbnail_container,
-                    "blob_url" : config.azure.blobStorageShard.s1.base_url + config.azure.blobStorageShard.s1.container
+                    "blob_url" : config.azure.blobStorageShard.s1.base_url + config.azure.blobStorageShard.s1.container,
+                    "my_user_id":request.user_id
                     }
                 )
             }

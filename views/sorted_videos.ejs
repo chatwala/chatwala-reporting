@@ -9,33 +9,41 @@
 
         var populateConvoList = function(current){
 
-
             var c = $("#convo_container");
             c.empty();
 
             var current_user_id = current;
             var msg_thumbnail_container_url = "<%= message_thumbnail_url %>";
+            var len = the_users[current_user_id].length-1;
             var blob_url = "<%= blob_url %>";
 
+            for(var i=len;i>=0;i--){
+                var reply_to = (the_users[current_user_id][i].replying_to_message_id==="null")?i:the_users[current_user_id][i].replying_to_message_id;
 
-            for(var i=0;i<the_users[current_user_id].length;i++){
-
-                var to_insert = "<a href='"+blob_url+"/"+the_users[current_user_id][i].message_id+"'> <img width='150px' height='70px' src='"+msg_thumbnail_container_url+"/"+the_users[current_user_id][i].message_id+"' alt='' onerror='imgError(this,\""+current_user_id+"\")'/></a>"
-    
+                //var to_insert = "<a href='"+blob_url+"/"+the_users[current_user_id][i].message_id+"'> <img width='150px' height='70px' src='"+msg_thumbnail_container_url+"/"+the_users[current_user_id][i].message_id+"' alt='' onerror='imgError(this,\""+current_user_id+"\")'/></a>"
+                var to_insert = "<img id='"+reply_to+"' class='convos' width='150px' height='70px' src='"+msg_thumbnail_container_url+"/"+the_users[current_user_id][i].message_id+"' alt='' onerror='imgError(this,\""+current_user_id+"\")'/><a href='"+blob_url+"/"+the_users[current_user_id][i].message_id+"'>DL</a>";
                 c.append(to_insert);
-
-
             }
 
+            $('.convos').click(function(){
+                var r = $("#reply_container");
+                r.empty();
+                var reply_to_id = $(this).attr("id");
+                var msg_thumbnail_container_url = "<%= message_thumbnail_url %>";
+                var blob_url = "<%= blob_url %>";
+
+                var to_insert = "<a href='"+blob_url+"/"+reply_to_id+"'> <img src='"+msg_thumbnail_container_url + "/" +reply_to_id+"' width='150px' height='70px' alt='' onerror='imgError(this,\"<%= my_user_id %>\")'/></a>";
+
+                r.append(to_insert);
+
+            })
+
         }
-
-
 
         $('.upp').click(function(){
             populateConvoList($(this).attr("id"));
         })
 
-        console.log(the_users);
     };
 
     var imgError = function(image,url) {
@@ -47,11 +55,12 @@
 
 </script>
 <body>
+
 <%//Init ejs variables
     var user_profile_url = profile_url;
 
   %>
-    <div style="height:50px"><span>User Inbox</span><span style="margin-left:150px">Conversations</span></div>
+    <div style="height:50px"><span>User Inbox</span><span style="margin-left:135px">Conversations</span><span style="margin-left:45px">The message that was replied to</span></div>
 <div style="width:200px;height:600px; overflow-y:scroll;position:fixed">
 
         <%for(var u in users){%>
@@ -61,9 +70,10 @@
         <%}%>
 </div>
 
-<div id="convo_container" style="width:155px;height:600px;overflow-y:scroll;position:fixed;left:180px">
+<div id="convo_container" style="width:155px;height:600px;overflow-y:scroll;position:fixed;left:180px"></div>
 
-</div>
+<div id="reply_container" style="width:155px;height:600px;position:fixed;left:360px;"></div>
+
 </body>
 <script>
     the_users = {}
