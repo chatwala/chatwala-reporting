@@ -21,7 +21,7 @@
                 var reply_to = (the_users[current_user_id][i].replying_to_message_id==="null")?i:the_users[current_user_id][i].replying_to_message_id;
 
                 //var to_insert = "<a href='"+blob_url+"/"+the_users[current_user_id][i].message_id+"'> <img width='150px' height='70px' src='"+msg_thumbnail_container_url+"/"+the_users[current_user_id][i].message_id+"' alt='' onerror='imgError(this,\""+current_user_id+"\")'/></a>"
-                var to_insert = "<img id='"+reply_to+"' class='convos' width='150px' height='70px' src='"+msg_thumbnail_container_url+"/"+the_users[current_user_id][i].message_id+"' alt='' onerror='imgError(this,\""+current_user_id+"\")'/><a href='"+blob_url+"/"+the_users[current_user_id][i].message_id+"'>DL</a>";
+                var to_insert = "<img id='"+reply_to+"' class='convos' width='150px' height='70px' src='"+msg_thumbnail_container_url+"/"+the_users[current_user_id][i].message_id+"' alt='' onerror='imgError(this,\""+current_user_id+"\")'/><a href='"+blob_url+"/"+the_users[current_user_id][i].message_id+"' target='_blank'>DL</a>";
                 c.append(to_insert);
             }
 
@@ -31,8 +31,13 @@
                 var reply_to_id = $(this).attr("id");
                 var msg_thumbnail_container_url = "<%= message_thumbnail_url %>";
                 var blob_url = "<%= blob_url %>";
+                var link_to_download = "#"
 
-                var to_insert = "<a href='"+blob_url+"/"+reply_to_id+"'> <img src='"+msg_thumbnail_container_url + "/" +reply_to_id+"' width='150px' height='70px' alt='' onerror='imgError(this,\"<%= my_user_id %>\")'/></a>";
+                if(reply_to_id.length>4){
+                    link_to_download = blob_url+"/"+reply_to_id;
+                }
+
+                var to_insert = "<a href='"+link_to_download+"' target='_blank'> <img src='"+msg_thumbnail_container_url + "/" +reply_to_id+"' width='150px' height='70px' alt='' onerror='imgError(this,\"<%= my_user_id %>\")'/></a>";
 
                 r.append(to_insert);
 
@@ -61,7 +66,7 @@
 
   %>
     <div style="height:50px"><span>User Inbox</span><span style="margin-left:135px">Conversations</span><span style="margin-left:45px">The message that was replied to</span></div>
-<div style="width:200px;height:600px; overflow-y:scroll;position:fixed">
+<div style="width:155px;height:600px; overflow-y:scroll;position:fixed">
 
         <%for(var u in users){%>
             <div class="upp" style="float:left" id="<%=u%>">
