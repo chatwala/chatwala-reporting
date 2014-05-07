@@ -72,7 +72,9 @@ app.get('/reporting2', api.reporting.getNumberOfUsersWithInboxOfSpecificSize);
 app.get('/outbox', api.reporting.messagesWithUnknownRecipient);
 app.get('/videos', api.videos.index);
 app.post('/getInbox',api.videos.inbox);
-
+app.get('/v',function(req,res){
+    res.render('video');
+})
 
 var server = http.createServer(app);
 

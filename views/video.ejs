@@ -1,0 +1,114 @@
+<!doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video</title>
+    <style>
+        .chatwala_button{
+            display:block;
+            position:relative;
+            top:-516px;
+            right:-308px;
+            text-align: center;
+            height:100px;
+            width:100px;
+            background:url(../images/stop_button.png) 0 no-repeat;
+            background-size: 100px 100px;
+            z-index: 100;
+        }
+
+    </style>
+    <script type="application/javascript">
+
+        function rotateVid(vid, deg){
+            vid.style.webkitTransform = 'rotate('+deg+'deg)';
+            vid.style.mozTransform    = 'rotate('+deg+'deg)';
+            vid.style.msTransform     = 'rotate('+deg+'deg)';
+            vid.style.oTransform      = 'rotate('+deg+'deg)';
+            vid.style.transform       = 'rotate('+deg+'deg)';
+        }
+
+        window.onload = function(){
+            var vid = document.getElementById('video');
+            var vid2 = document.getElementById('video2');
+            var vid3 = document.getElementById('video3');
+            var vid4 = document.getElementById('video4');
+            var vid5 = document.getElementById('video5');
+
+
+            var deg = 270;//s4
+            var deg2 = 90;//iphone
+
+            rotateVid(vid,deg);
+            rotateVid(vid2,deg2);
+            rotateVid(vid3,deg);
+            rotateVid(vid4,deg2);
+            rotateVid(vid5,deg);
+
+            vid.style["margin-top"] = "124px"
+            vid2.style["margin-top"] = "179px"
+            vid2.style['margin-left'] = "88px"
+            vid3.style["margin-top"] = "124px"
+            vid4.style["margin-top"] = "179px"
+            vid4.style['margin-left'] = "88px"
+            vid5.style["margin-top"] = "124px"
+
+            vid2.addEventListener("play", function() {
+                setTimeout(function(){vid.play();},200);
+            })
+
+            vid.addEventListener("ended",function(){
+                vid.style.display = 'none';
+                vid3.style.display = 'block';
+                vid3.play();
+                vid2.muted = true;
+                delete(this);
+
+            })
+
+            vid2.addEventListener("ended",function(){
+                    vid2.style.display = 'none';
+                    vid4.style.display='block';
+                    vid4.play();
+                    delete(this);
+            })
+
+            vid3.addEventListener("ended",function(){
+                vid3.style.display = 'none';
+                vid5.style.display = 'block';
+                vid5.play();
+                delete(this);
+            })
+
+            vid4.addEventListener("ended",function(){
+                vid5.pause();
+            })
+
+
+
+
+
+            }
+
+
+    </script>
+</head>
+<body onload="doLoad()">
+
+<div id="canvas_container" style="width:320px;height:568px">
+    <div>
+        <video id="video" src="../vids/1.mp4" height="400" muted="true"></video>
+        <video id="video3" src="../vids/3.mp4" height="400" style="display:none"></video>
+        <video id="video5" src="../vids/5.mp4" height="400" style="display:none"></video>
+    </div>
+    <div>
+        <video id="video2" src="../vids/2.mp4" height="400"></video>
+        <video id="video4" src="../vids/4.mp4" height="400" style="display:none"></video>
+    </div>
+
+    <div class="chatwala_button"></div>
+</div>
+
+</body>
+</html>
