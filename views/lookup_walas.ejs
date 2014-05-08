@@ -1,0 +1,26 @@
+<!doctype html>
+
+<html>
+<head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../js/cw_client_socket.js"></script>
+</head>
+<body>
+    <div id="environment_div">
+        <span>DEV</span><input type="radio" name="env" id="dev_env" value="deveast" checked/>
+        <span>QA</span><input type="radio" name="env" id="qa_env" value="qa"/>
+    </div>
+    <div>
+        <span>Message ID:</span>
+        <input id="message_id_input" type="text" name="message_id"/>
+        <button onclick="getMessageData()">Search</button>
+        <span id="status"></span>
+    </div>
+    <div style="width:50%;overflow:scroll;height:450px">
+        <pre id="json_div"></pre>
+    </div>
+
+
+</body>
+</html>

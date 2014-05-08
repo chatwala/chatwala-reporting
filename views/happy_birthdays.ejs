@@ -1,0 +1,110 @@
+<!doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+<head>
+
+    <style>
+        video {
+            position:relative;
+            margin-left: -139px;
+        }
+
+        .row video
+    </style>
+    <meta charset="UTF-8">
+    <title>Video</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="application/javascript">
+
+        function rotateVid(vid, deg){
+            vid.style.webkitTransform = 'rotate('+deg+'deg)';
+            vid.style.mozTransform    = 'rotate('+deg+'deg)';
+            vid.style.msTransform     = 'rotate('+deg+'deg)';
+            vid.style.oTransform      = 'rotate('+deg+'deg)';
+            vid.style.transform       = 'rotate('+deg+'deg)';
+
+        }
+
+        window.onload = function(){
+            var vid1 = document.getElementById('video1');
+            var vid2 = document.getElementById('video2');
+            var vid3 = document.getElementById('video3');
+            var vid4 = document.getElementById('video4');
+            var tej = document.getElementById('video5');
+            var vid6 = document.getElementById('video6');
+            var vid7 = document.getElementById('video7');
+            var vid8 = document.getElementById('video8');
+            var vid9 = document.getElementById('video9');
+
+
+            var isFirstPlay = false
+
+            var deg = 270;//s4
+            var deg2 = 90;//iphone
+
+            rotateVid(vid1,deg2);
+            rotateVid(vid2,deg2);
+            rotateVid(vid3,deg2);
+            rotateVid(vid4,deg2);
+            rotateVid(tej,deg2);
+            rotateVid(vid6,deg2);
+            rotateVid(vid7,deg2);
+            rotateVid(vid8,deg2);
+            rotateVid(vid9,deg2);
+
+
+            tej.addEventListener("ended",function(){
+                if(!isFirstPlay){
+                    this.currentTime = 0;
+                    this.play();
+                    this.muted = true;
+
+                    vid1.play();
+                    vid2.play();
+                    vid3.play();
+                    vid4.play();
+                    vid6.play();
+                    vid7.play();
+                    vid8.play();
+                    vid9.play();
+                    isFirstPlay = true;
+                }
+
+            })
+
+            for(var i=1;i < 10;i++){
+                if(i==5){
+                    continue;
+                }
+                var v = document.getElementById("video"+i)
+                v.style.visibility = "visible";
+            }
+
+
+        }
+
+
+    </script>
+</head>
+<body>
+
+<div id="canvas_container" style="width:100%;height:100%;margin-left:50px">
+    <div class="row">
+    <video id="video1" src="../vids/hb/1.mp4" height="400" style="visibility:hidden"></video>
+    <video id="video2" src="../vids/hb/2.mp4" height="400" style="visibility:hidden"></video>
+    <video id="video3" src="../vids/hb/3.mp4" height="400" style="visibility:hidden"></video>
+    </div>
+    <div class="row">
+        <video id="video4" src="../vids/hb/4.mp4" height="400" style="visibility:hidden"></video>
+        <video id="video5" src="../vids/hb/5.mp4" height="400"></video>
+        <video id="video6" src="../vids/hb/6.mp4" height="400" style="visibility:hidden"></video>
+    </div>
+    <div class="row">
+        <video id="video7" src="../vids/hb/7.mp4" height="400" style="visibility:hidden"></video>
+        <video id="video8" src="../vids/hb/8.mp4" height="400" style="visibility:hidden"></video>
+        <video id="video9" src="../vids/hb/9.mp4" height="400" style="visibility:hidden"></video>
+    </div>
+</div>
+
+</body>
+</html>

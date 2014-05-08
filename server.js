@@ -7,7 +7,7 @@ var config = require('./config.js');
 
 "use strict";
 var express = require('express');
-var api = require('./routes/api.js');
+var api = require('./routes/tools/api.js');
 var mongoClient = require('./cw_mongo.js');
 
 var clientID = "58041de0bc854d9eb514d2f22d50ad4c";
@@ -36,6 +36,11 @@ mongoClient.getConnection(function (err, db) {
     queue = [];
 });
 
+app.use(express.basicAuth(function(user, pass) {
+    console.log("authenticating,...");
+    return user === 'admin' && pass === 'C0m3@M3Br0';
+}));
+
 app.set('port', process.env.PORT || 1337);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -61,22 +66,14 @@ app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.multipart());
 
-
-// development only
-if ('development' == app.get('env')) {
-    app.use(express.errorHandler());
-}
-
-//app.get('/getNumberOfUsersWithInbox', reporting.getUsersWithInbox);
-app.get('/reporting2', api.reporting.getNumberOfUsersWithInboxOfSpecificSize);
-app.get('/outbox', api.reporting.messagesWithUnknownRecipient);
-app.get('/videos', api.videos.index);
-app.post('/getInbox',api.videos.inbox);
-app.get('/v',function(req,res){
-    res.render('video');
-})
+api.reporting.setRoutes(app);
+api.videos.setRoutes(app);
+api.message_compilations.setRoutes(app);
+api.message_lookup.setRoutes(app);
 
 var server = http.createServer(app);
+require("./routes/cw_socket.js")(server);
+
 
 server.listen(app.get('port'), function () {
     console.log('listening on port ' + app.get('port') + " started:  ");
